@@ -31,7 +31,8 @@ class AppLoader(object):
             app_name = fullname.split('.')[2]
             app_path = self.get_app_path(app_name)
             import_path = '.'.join([app_path] + fullname.split('.')[3:])
-            mod = __import__(import_path)
+            __import__(import_path)
+            sys.modules[fullname] = sys.modules[import_path]
             return sys.modules[import_path]
 
     def get_app_path(self, name):

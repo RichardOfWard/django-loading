@@ -45,3 +45,10 @@ class DjangoLoading(TestCase):
         from testproject.apps.app1.models import TestModel as m1
         from loading.apps.app1.models import TestModel as m2
         self.assertIs(m1, m2)
+
+    def test_0080_import_app_model(self):
+        import loading.apps.app1.models
+        self.assertIs(
+            sys.modules['loading.apps.app1.models'],
+            sys.modules['testproject.apps.app1.models'],
+        )
