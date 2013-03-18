@@ -16,10 +16,10 @@ you would add ``foo.bar`` to your INSTALLED_APPS) then you can get hold of
 ``bar`` without knowing its full module path::
 
     import loading
-    foo = loading.apps.bar
+    bar = loading.apps.bar
 
     # load a model:
-    MyModel = foo.models.MyModel
+    MyModel = bar.models.MyModel
 
 Your app names in a django project should all be unqiue, django-loading won't
 work if they are not (but django won't like that either).
