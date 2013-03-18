@@ -4,6 +4,8 @@ import imp
 
 class AppLoader(object):
 
+    package = "".join(__name__.split(".")[:-1])
+
     def __init__(self):
         super(AppLoader, self).__init__()
         self.__apps = None
@@ -12,13 +14,13 @@ class AppLoader(object):
         sys.meta_path.append(self)
 
     def find_module(self, fullname, path):
-        if fullname == __package__ + '.apps':
+        if fullname == self.package + '.apps':
             return self
-        if fullname.startswith(__package__ + '.apps'):
+        if fullname.startswith(self.package + '.apps'):
             return self
 
     def load_module(self, fullname):
-        if fullname == __package__ + '.apps':
+        if fullname == self.package + '.apps':
             mod = sys.modules.setdefault(fullname, imp.new_module(fullname))
             mod.__file__ = '<not-from-file>'
             mod.__loader__ = self
