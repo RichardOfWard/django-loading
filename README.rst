@@ -2,6 +2,11 @@
 Django-loading
 ===========
 
+.. image:: https://secure.travis-ci.org/RichardOfWard/django-loading.png
+    :alt: Build Status
+    :target: http://travis-ci.org/RichardOfWard/django-loading
+
+
 Django-loading allows you to load your django apps by their app name rather
 than by the module path. This is particularly useful if you don't know where
 modules will be installed or if you plan to allow overriding of your apps (eg
