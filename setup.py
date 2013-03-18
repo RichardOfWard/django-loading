@@ -1,10 +1,14 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 import loading
 
 setup(
     name='django-loading',
-    version=__loading__,
+    version=loading.__version__,
     packages=['loading'],
     license='BSD',
-    long_description=open('README.txt').read(),
-)
+    description='Load your django apps by app name rather than module path.',
+    long_description=open('README.rst').read(),
+    author='Richard Ward',
+    author_email='richard@richard.ward.name',
+    url='https://github.com/RichardOfWard/django-loading',
+) 
