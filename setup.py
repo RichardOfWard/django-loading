@@ -11,4 +11,6 @@ setup(
     author='Richard Ward',
     author_email='richard@richard.ward.name',
     url='https://github.com/RichardOfWard/django-loading',
+    test_suite='testproject.tests',
+    tests_require=['django']
 ) 
