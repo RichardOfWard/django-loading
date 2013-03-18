@@ -1,9 +1,18 @@
 import os
-import unittest
+import sys
+from unittest import TestCase as BaseTestCase
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "testproject.settings")
 
 
-class DjangoLoading(unittest.TestCase):
+class TestCase(BaseTestCase):
+    def assertIs(self, a, b):
+        if sys.version_info[:2] == (2, 6):
+            return self.assertTrue(a is b)
+        else:
+            return super(TestCase, self).assertIs(a, b)
+
+
+class DjangoLoading(TestCase):
 
     def test_0010_import_loading(self):
         import loading
