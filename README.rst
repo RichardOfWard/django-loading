@@ -2,6 +2,8 @@
 Django-loading
 ===========
 
+PLEASE USE djapps instead: https://github.com/RichardOfWard/djapps
+
 .. image:: https://secure.travis-ci.org/RichardOfWard/django-loading.png
     :alt: Build Status
     :target: http://travis-ci.org/RichardOfWard/django-loading
